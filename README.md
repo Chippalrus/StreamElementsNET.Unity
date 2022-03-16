@@ -1,5 +1,5 @@
 # StreamElementsNET.Unity
- StreamElementsNET for Unity and uses NativeWebSocket instead of WebSocket4Net
+ StreamElementsNET for Unity and uses [NativeWebSocket](https://github.com/endel/NativeWebSocket) instead of [WebSocket4Net](https://github.com/kerryjiang/WebSocket4Net)
  
 #### Requirements
  - Uses NativeWebSocket for Unity ( https://github.com/endel/NativeWebSocket )
