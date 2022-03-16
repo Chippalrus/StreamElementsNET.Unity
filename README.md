@@ -1,12 +1,10 @@
 # StreamElementsNET.Unity
  StreamElementsNET for Unity that uses [NativeWebSocket](https://github.com/endel/NativeWebSocket) instead of [WebSocket4Net](https://github.com/kerryjiang/WebSocket4Net)
  
-#### Requirements
- - Uses NativeWebSocket for Unity ( https://github.com/endel/NativeWebSocket )
- - Uses StreamElementsNET Models ( https://github.com/swiftyspiffy/StreamElementsNET )
- 
-### Libraries
-- Newtonsoft.Json - JSON parsing
+#### Required Libraries
+ - NativeWebSocket for Unity ( https://github.com/endel/NativeWebSocket )
+ - StreamElementsNET Models ( https://github.com/swiftyspiffy/StreamElementsNET )
+ - Newtonsoft.Json - JSON parsing
  
 ### Usage for Unity
 ```
