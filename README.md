@@ -35,6 +35,3 @@ void Update()
 
 # StreamElementsNET
  [StreamElementsNET](https://github.com/swiftyspiffy/StreamElementsNET) by [@swiftyspiffy](http://twitter.com/swiftyspiffy)
-
-## License
-MIT License. &copy; 2022
