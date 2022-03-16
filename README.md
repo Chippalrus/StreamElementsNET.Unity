@@ -8,32 +8,29 @@
  
 ### Usage for Unity
 ```
-public class Test : MonoBehaviour
+private StreamElementsNET.Unity.Client streamElements;
+
+void Start()
 {
-    private StreamElementsNET.Unity.Client streamElements;
+    streamElements = new StreamElementsNET.Unity.Client( "<JWT-TOKEN>" );
+    streamElements.OnConnected += StreamElements_OnConnected;
+    streamElements.OnAuthenticated += StreamElements_OnAuthenticated;
+    streamElements.OnFollower += StreamElements_OnFollower;
+    streamElements.OnSubscriber += StreamElements_OnSubscriber;
+    streamElements.OnHost += StreamElements_OnHost;
+    streamElements.OnTip += StreamElements_OnTip;
+    streamElements.OnCheer += StreamElements_OnCheer;
+    streamElements.OnAuthenticationFailure += StreamElements_OnAuthenticationFailure;
+    streamElements.OnReceivedRawMessage += StreamElements_OnReceivedRawMessage;
+    streamElements.OnSent += StreamElements_OnSent;
 
-    void Start()
-    {
-        streamElements = new StreamElementsNET.Unity.Client( "<JWT-TOKEN>" );
-        streamElements.OnConnected += StreamElements_OnConnected;
-        streamElements.OnAuthenticated += StreamElements_OnAuthenticated;
-        streamElements.OnFollower += StreamElements_OnFollower;
-        streamElements.OnSubscriber += StreamElements_OnSubscriber;
-        streamElements.OnHost += StreamElements_OnHost;
-        streamElements.OnTip += StreamElements_OnTip;
-        streamElements.OnCheer += StreamElements_OnCheer;
-        streamElements.OnAuthenticationFailure += StreamElements_OnAuthenticationFailure;
-        streamElements.OnReceivedRawMessage += StreamElements_OnReceivedRawMessage;
-        streamElements.OnSent += StreamElements_OnSent;
+    streamElements.Connect();
+}
 
-        streamElements.Connect();
-    }
-    
-    void Update()
-    {
-        streamElements.DispatchMessageQueue();
-    }
-...
+void Update()
+{
+    streamElements.DispatchMessageQueue();
+}
 ```
 
 # StreamElementsNET
