@@ -98,15 +98,21 @@ namespace StreamElementsNET.Unity
             send( "2" );
         }
 
-        public void Disconnect()
+        public async void Disconnect()
         {
-            client.Close();
+            if( client.State == WebSocketState.Open )
+            {
+                await client.Close();
+            }
         }
 
         private async void send(string msg)
         {
-            await client.SendText(msg);
-            OnSent?.Invoke(client, msg);
+            if( client.State == WebSocketState.Open )
+            {
+                await client.SendText(msg);
+                OnSent?.Invoke(client, msg);
+            }
         }
 
         private void handleAuthentication()
@@ -350,7 +356,10 @@ namespace StreamElementsNET.Unity
         }
         public  void    DispatchMessageQueue()
         {
-            client.DispatchMessageQueue();
+            if( client.State == WebSocketState.Open )
+            {
+                client.DispatchMessageQueue();
+            }
         }
     }
 }
