@@ -2,7 +2,6 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Timers;
 using NativeWebSocket;
-
 namespace StreamElementsNET.Unity
 {
     public class Client
@@ -357,6 +356,7 @@ namespace StreamElementsNET.Unity
         {
             if( decoded[ 0 ].ToString() == "event:test" )
             {
+                
                 var data = decoded[ 1 ][ "event" ];
                 var eventName = decoded[ 1 ][ "listener" ].ToString();
 

@@ -14,11 +14,12 @@ namespace StreamElementsNET.Models.Subscriber
         public int Amount { get; }
         public string Tier { get; }
         public bool Gifted { get; }
+        public bool BulkGifted { get; }
         public string Sender { get; }
         public string Message { get; }
         public string Avatar { get; }
 
-        public Subscriber(string username, string userid, string displayName, int amount, string tier, bool gifted, string sender, string message, string avatar)
+        public Subscriber(string username, string userid, string displayName, int amount, string tier, bool gifted, bool bulkGifted, string sender, string message, string avatar)
         {
             Username = username;
             UserId = userid;
@@ -26,6 +27,7 @@ namespace StreamElementsNET.Models.Subscriber
             Amount = amount;
             Tier = tier;
             Gifted = gifted;
+            BulkGifted = bulkGifted;
             Sender = sender;
             Message = message;
             Avatar = avatar;

@@ -13,14 +13,18 @@ namespace StreamElementsNET.Models.Subscriber
         public string Tier { get; }
         public string Message { get; }
         public bool Gifted { get; }
+        public bool BulkGifted { get; }
         public string Sender { get; }
 
-        public SubscriberLatest(string name, int amount, string tier, string message, bool gifted, string sender)
+        public SubscriberLatest(string name, int amount, string tier, string message, bool gifted, bool bulkGifted, string sender)
         {
             Name = name;
             Amount = amount;
             Tier = tier;
             Message = message;
+            Gifted = gifted;
+            BulkGifted = bulkGifted;
+            Sender = sender;
         }
     }
 }

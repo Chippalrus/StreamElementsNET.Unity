@@ -10,18 +10,20 @@ namespace StreamElementsNET.Parsing
         public static Models.Subscriber.Subscriber handleSubscriber(JToken json)
         {
             var gifted = json["gifted"] != null;
+            var bulkGifted = json["bulkGifted"] != null;
             var sender = json["sender"] != null ? json["sender"].ToString() : "";
             var message = json["message"] != null ? json["message"].ToString() : "";
             return new Models.Subscriber.Subscriber(json["username"].ToString(), json["providerId"].ToString(), json["displayName"].ToString(),
-                int.Parse(json["amount"].ToString()), json["tier"].ToString(), gifted, sender, message, json["avatar"].ToString());
+                int.Parse(json["amount"].ToString()), json["tier"].ToString(), gifted, bulkGifted, sender, message, json["avatar"].ToString());
         }
 
         public static Models.Subscriber.SubscriberLatest handleSubscriberLatest(JToken json)
         {
             var gifted = json["gifted"] != null;
+            var bulkGifted = json[ "bulkGifted" ] != null;
             var sender = json["sender"] != null ? json["sender"].ToString() : "";
             var message = json["message"] != null ? json["message"].ToString() : "";
-            return new Models.Subscriber.SubscriberLatest(json["name"].ToString(), int.Parse(json["amount"].ToString()), json["tier"].ToString(), message, gifted, sender);
+            return new Models.Subscriber.SubscriberLatest(json["name"].ToString(), int.Parse(json["amount"].ToString()), json["tier"].ToString(), message, gifted, bulkGifted, sender);
         }
 
         public static int handleSubscriberSession(JToken json)
